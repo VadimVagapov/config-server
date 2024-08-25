@@ -1,0 +1,6 @@
+FROM openjdk
+ARG JAR_FILE=build/libs/config-server-1.0.0.jar
+WORKDIR /opt/app
+COPY ${JAR_FILE} app.jar
+EXPOSE 8081
+ENTRYPOINT ["java", "-jar", "app.jar"]
